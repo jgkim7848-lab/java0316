@@ -1,0 +1,68 @@
+		char pn = scan.next().charAt(0); //return이 char로 들어감.
+		//1글자만 추출함으로서 ==으로 비교가 가능한 char의 사용이 가능해짐.
+		
+		
+		yield
+		
+		
+				/* 문자를 숫자로 바구고시프다아으ㅏ으ㅏ아
+		 * string을 int로??
+		 * */
+		String str = "123";//""를 뗐을때 숫자가 되는거만
+				//int 기본 자료형>>>>>>더많은기능제공class자료형을 제공함.
+				//int의 래퍼 클래스라고 부름 (시발 뭐지이건
+				//int -> Integer / long -> Long / boolean -> Boolean
+		int strNumber = Integer.parseInt(str);
+		System.out.println(strNumber);
+		//str이 123이 아니라 abc면 오류남.
+		
+		
+		
+		
+		/*
+		 * 숫자를 문자로. int를 String으로. 
+		 * 사실상 "" 붙이고 떼고지만 간단한건 아니다
+		 * */
+		int numberStr = 12345;
+		String numberStr2 = String.valueOf(numberStr);
+		System.out.println(numberStr2);
+		
+		
+		
+		1 switch문을 이용한 케이스
+		syso  "첫번째 숫자"
+		syso  "두번째 숫자" 
+		
+		두 정수를 띄어쓰기하여 입력해달라고 하면 
+		int a = scan.nextInt()이거 변수 바꿔서 2번 적고 띄어쓰기해서 숫자 2개 주면 2개로 받아들임.
+		공백을 기준으로 첫번째 두번째 scan.nextInt 나눠서 받아들임.
+		 2개를 입력했다고 치고....
+		 char op = scan.next .charAt(0)
+		 
+		switch(op) {
+		case '+'; syso ; break;
+		case '-'; syso ;break;
+		case '*'; syso ;break;
+		case '/'; syso ; break;
+		case '%'; syso ;break;
+		default 
+		}
+		
+		"" + n1 + op + n2 + "=" 계산 앞뒤로 "" "" 넣으면 사이에 있는게 다르게 취급된다???
+		   시발 이건 진짜 모르겄노
+		
+if문 사용???
+값을 string으로 받는다면???
+앞에서 쓴 변수의========
+
+
+
+
+
+
+
+
+
+
+
+
