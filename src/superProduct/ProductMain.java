@@ -29,49 +29,43 @@ public class ProductMain {
 		Scanner scan = new Scanner(System.in);
 		
 		// 1. 판매할 상품 등록 Product[]
-		Product[] menu = new Product[5];
-		
-		// 배열에 등록 객체생성(생성자이용)
-		menu[0] = new Product("김밥", 3000);
-		
-		// 객체 생성 후 => insertProduct 호출 => 배열에 등록
-		Product p =  new Product();
-		p.insertProduct("라면", 1500);
-		menu[1] = p;
-		
-		// 생성자를 활용 바로 객체 생성 => 배열에 등록
-		Product p1 = new Product("제품", 100);
-		
-		// 객체 생성 후 => set을 이용하여 객체 추가 => 배열에 등록
-		Product p2 = new Product();
-		p2.setName("제품2");
-		p2.setPrice(500);
-		
-		menu[2] = new Product("떡볶이", 4000);
-		menu[3] = new Product("볶음밥", 5000);
-		menu[4] = new Product("사이다", 500);
-		
+		Product[] menu = new Product[5];//판매 제품을 담는 배열
 		// 주문을 담을 변수 []
 		Order[] order = new Order[5];
-		int cnt=0;
 		
-//		String ok = "y";
-//		while(!ok.equals("n")) {
-//			
-//		}
 		
-		char ok = 'y';
-		while(ok != 'n') {
-			System.out.println("주문하시겠습니까? (y/n)");
-			ok = scan.next().charAt(0);
+		// 배열에 등록 객체생성(생성자이용)   product목록이건 내가 파는 목록이고
+		menu[0] = new Product("김밥", 3000);
+		menu[1] = new Product("라면", 3500);
+		menu[2] = new Product("떡볶이", 4000);
+		menu[3] = new Product("볶음밥", 5000);
+		menu[4] = new Product("사이다", 1000);
+		
+		//menu는 product를 담는것....
+		
+		// 객체 생성 후 => insertProduct 호출 => 배열에 등록
+//		Product p =  new Product();
+//		p.insertProduct("라면", 1500);
+//		menu[1] = p;
+		
+		// 생성자를 활용 바로 객체 생성 => 배열에 등록
+//		Product p1 = new Product("제품", 100);
+		
+		// 객체 생성 후 => set을 이용하여 객체 추가 => 배열에 등록
+//		Product p2 = new Product();
+//		p2.setName("제품2");
+//		p2.setPrice(500);
+		
+		
+		int cnt=0; //index 역할 시킬거임.
+		
+		String ok = "y";
+		while(!ok.equals("n")) {
+			//ok.equals y로 안보는 이유는....다른 키워드가 왔을때 반복처리를 위해.
 			
-			if(ok == 'n') {
-				System.out.println("주문을 종료합니다.");
-				break;
-			}
-			if(ok == 'y') {
-				// 처리
-				// 메뉴 출력
+			System.out.println("주문하시겠습니까? (y/n)");
+			ok = scan.next();
+			if(ok.toLowerCase().equals("y")) {
 				for(int i=0; i<menu.length; i++) {
 					System.out.println((i+1)+"."+menu[i]);
 				}
@@ -101,15 +95,21 @@ public class ProductMain {
 					// 주소 변경
 					order = tmp;
 				}
-				order[cnt] = o;
+				order[cnt] = o; 
+				//배열 추가전에 배열이 꽉 찼는지 if문으로 확인 먼저 돌리기.
 				cnt++;
 				
 				
+			} else if(ok.toLowerCase().equals("n")){
+				System.out.println("주문 종료");
+				break;
 			}else {
-				System.out.println("y/n 을 선택해주세요.");
+				System.out.println("y / n");
+				
 			}
 			
 		}
+		
 		System.out.println("--주문 내역 출력--");
 		int sum = 0; // 총 지불금액
 		for(int i=0; i<cnt; i++) {

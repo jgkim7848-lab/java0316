@@ -1,11 +1,13 @@
 package superProduct;
 
 public class Product {
-	// 상품(Product) class : 상품, 가격(판매금액)
+	// 상품(Product) class : 상품, 가격(판매금액), 판매할 물건 객체의 이름과 가격
 	
 	// 멤버변수
 	private String name;
 	private int price;
+	
+	//클래스 생성시 반드시 필요한 사항 - 멤버변수, 생성자, 게터 세터, toString
 	
 	// 생성자
 	public Product() {}
@@ -20,7 +22,11 @@ public class Product {
 	public void insertProduct(String name, int price) {
 		this.name = name;
 		this.price = price;
-	}
+	}//이 생성자를 통해서 생성을 못할경우....setname setprice로 지정을 해줘야할텐데
+	//생성자 역할을 하는 메서드가 하나 있으면 편할거같도르
+	//이름과 가격을 등록하는걸 만들고싶다.
+	 //set으로 하면 편하다만은 그냥 만들고싶다 해서 나온게 위에거.
+	
 
 	public String getName() {
 		return name;
