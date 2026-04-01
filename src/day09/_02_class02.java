@@ -64,7 +64,7 @@ class Test2{//01에 Test가 이미 있으므로 여기서 그냥 Test 쓰면 오
 	}
 	
     public void print() {
-        System.out.println("(" + this.x + ", " + this.y + ")");
+        System.out.println("(" + this.x + ", " + this.y + ") = " + (this.x + this.y));
     }
 
     

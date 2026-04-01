@@ -9,8 +9,13 @@ public class StudentMain {
 		Scanner scan = new Scanner(System.in);
 		StudentController sc = new StudentController();
 		
+		
+		
+		
+		
+		//샘플데이터 호출할 위치 (do while에 하면 문제가 생긴다 근데 무슨 문제라캤지...
 		int menu = 0;
-		sc.addStudent();
+		sc.addStudent();//이거 적으셨네잉.
 		sc.addSubject();
 		do {
 			System.out.println("--선택--");
