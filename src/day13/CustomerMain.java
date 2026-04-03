@@ -30,11 +30,65 @@ public class CustomerMain {
 		Scanner scan = new Scanner(System.in);
 		
 		
-		Customer[] customer = new Customer[5];
+		Customer[] customer = new Customer[10];
 		
-		customer[0] = new Customer();
-		customer[1] = new GoldCustomer();
-		customer[2] = new VIPCustomer();
+		customer[0] = new VIPCustomer("1111", "홍길동", "순이", "0384");
+		customer[1] = new GoldCustomer("2222", "만득이");
+		customer[2] = new VIPCustomer("3333", "박박박","영이", "9876");
+		customer[3] = new Customer("4444", "박살이");
+		customer[4] = new GoldCustomer("5555", "황준용");
+		customer[5] = new VIPCustomer("6666", "공삼이", "꿀벌", "5673");
+		customer[6] = new Customer("7777", "임꺽정");
+		customer[7] = new GoldCustomer("8888", "바리");
+		customer[8] = new Customer("9999", "김순회");
+		customer[9] = new Customer("4312", "남궁형");
+		
+		System.out.println("지불 금액과 포인트 계산 출력");
+		int price = 100000;
+		for(int i = 0; i < customer.length; i++) {
+			int saleprice = customer[i].calcPrice(price);
+			
+			System.out.println(saleprice + "지불 예정");
+			customer[i].printinfo();
+		}
+		
+		System.out.println("========포인트 누적 확인용==============");
+		price = 150000;
+		for(int i = 0; i < customer.length; i++) {
+			int saleprice = customer[i].calcPrice(price);
+			
+			System.out.println(saleprice + "지불 예정");
+			customer[i].printinfo();
+		}
+		
+		System.out.println("\n\n");
+		//다운캐스팅 써볼건데
+		//지금 상황에서 어떤 예시가 가능한가??
+		//지금 vip 상담사....가 바꼈다면???
+		//한명이 퇴사해서 상담사가 영이 9876에서 철이 9888로 바뀐거지.
+		
+		
+		for(int i = 0; i < customer.length; i++) {
+			if(customer[i] instanceof VIPCustomer) {
+				//여기 까지 온건 vip가 맞도르
+				VIPCustomer v = (VIPCustomer)customer[i]; //다운 캐스팅.
+				if(v.getAgentName().equals("영이")){
+							
+					v.setAgentName("철이");
+					v.setAgentNum("9888");
+				
+				}
+			}
+		}
+
+		System.out.println("\n\n");
+		//vip고객 리스트만 뽑아내기
+		for(int i = 0; i < customer.length; i++) {
+			if(customer[i] instanceof VIPCustomer) {
+					customer[i].printinfo();
+			}
+		}
+		
 		
 		
 		
